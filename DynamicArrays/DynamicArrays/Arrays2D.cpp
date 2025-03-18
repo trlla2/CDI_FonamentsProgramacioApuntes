@@ -13,8 +13,31 @@ struct Car
 
 };
 
+int* reziseToNewCapacityArray(int* dynamicArray, int newSize, int oldSize) {
+
+	if (dynamicArray == nullptr) { return dynamicArray; }
+
+	if (oldSize < 0 || newSize < 0) { return dynamicArray; }
+
+	int* newDynamicArray = new int[newSize];
+
+	if (newSize <= oldSize) {
+		oldSize = newSize;
+	}
+
+	for (int i = 0; i < oldSize; i++)
+	{
+		newDynamicArray[i] = dynamicArray[i];
+	}
+
+	delete[] dynamicArray;
+
+	return newDynamicArray;
+}
+
 int main()
 {
+	/*
 	// Arrays of 2 dimensions (Matrices)
 	std::cout << "Introduce number of row and column of the new matrix" << std::endl;
 	int numRows;
@@ -108,5 +131,29 @@ int main()
 	//	delete[] my2DArray[i]; // @ row i
 	//}
 	//delete[] my2DArray;
+	*/
+
+	int dynamicSpace;
+
+	std::cout << "Enter dynamic space" << std::endl;
+
+	std::cin >> dynamicSpace;
+
+	int* dynamicArray = new int[dynamicSpace];
+
+	for (int i = 0; i < dynamicSpace; i++)
+	{
+		dynamicArray[i] = 1;
+
+		std::cout << dynamicArray[1] << ", ";
+	}
+
+	int newDynamicSpace;
+
+	std::cout << "Enter new dynamic space" << std::endl;
+
+	std::cin >> newDynamicSpace;
+
+	dynamicArray = reziseToNewCapacityArray(dynamicArray, dynamicSpace, newDynamicSpace);
 
 }
