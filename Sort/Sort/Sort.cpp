@@ -22,7 +22,6 @@ int main()
 {
 	std::vector<int> v = { 4,1,6 - 5,2 };
 	std::sort(v.begin(), v.end(), compareFunc);
-	std::cout << "tonto quien  lo lea" << std::endl;
 	
 }
 
