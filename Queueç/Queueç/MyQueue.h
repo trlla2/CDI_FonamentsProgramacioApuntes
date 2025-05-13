@@ -1,12 +1,13 @@
 #pragma once
 #include <iostream>
 
+template<class T> // Template can be float, int ... <int>
 class MyQueue
 {
 private:
 	struct Node
 	{
-		int m_data;
+		T m_data;
 		Node* m_next;
 	};
 

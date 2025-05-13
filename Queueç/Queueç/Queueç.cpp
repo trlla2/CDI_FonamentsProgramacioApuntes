@@ -9,7 +9,8 @@ int main()
 {
 	std::queue<int> q1; // queue es una template (acepta varios tipos de datos)
 	std::queue<Enemy> q2;
-
+	MyQueue<float> q3;
+	MyQueue<Enemy> q4;
 	q1.push(197);
 	q1.push(6);
 	q1.push(34);
